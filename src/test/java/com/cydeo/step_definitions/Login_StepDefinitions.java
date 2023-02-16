@@ -1,6 +1,7 @@
 package com.cydeo.step_definitions;
 
 import io.cucumber.java.en.And;
+import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
@@ -42,6 +43,11 @@ public class Login_StepDefinitions {
     public void userEntersAdminPassword() { //feature classından otomatik oluşturursan kısayolla bu şekilde metot ismi yazılır ya da yukarıdaki gibi _ ile yazılmasını istersen runner classından yapılır
 
         System.out.println("user enters admin password");
+    }
+
+    @Given("user is on the library login page")
+    public void userIsOnTheLibraryLoginPage() {
+        System.out.println("user is on the library login page");
     }
 
     //feature dosyasında yazılan when, and ,then sadece anlamlı bir akış oluşturmak için kullanılır bunun dışında kodun çalıştırılmasına bir etkisi yoktur önemli olan bu kavramlardan sonra yazılan ifadelerin stepdefinitions classında annotation yanında yer alan ifadelerle birebir eşleşmesidir

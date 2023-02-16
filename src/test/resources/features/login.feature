@@ -13,9 +13,14 @@ Feature: Library app login feature
     When user enters librarian username
     And user enters librarian password
     Then user should see the dashboard
-
+    #şu an bu test senaryosunun step_definition kısmında
+  #oluşturulan @Given("user is on the library login page") ifadesinde @Given annotasyonunun
+  #kodun çalıştırılması açısından bir önemi yoktur.önemli olan Given user is on the library login
+  #page ifadesi ile @Given("user is on the library login page") bu ifadedeki double quote
+  #içerisinde bulunan ifadenin aynı olması gerektiğidir
   @student
   Scenario: Login as student
+
     When user enters student username
     And user enters students password
     Then user should see the dashboard
