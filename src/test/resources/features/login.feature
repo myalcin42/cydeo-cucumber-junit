@@ -5,8 +5,11 @@ Feature: Library app login feature
   accounts. And dashboard should be displayed.
   Accounts are: librarian, student, admin
 
-  @librarian
+  @librarian @employee @wip #work in progress bu annotation senin
+    #ya da başka birisinin bu senaryo üzerinde çalıştığını gösterir
+    #wip_munir de yazabilirsin mesela
   Scenario: Login as librarian
+    Given user is on the library login page
     When user enters librarian username
     And user enters librarian password
     Then user should see the dashboard
@@ -17,7 +20,7 @@ Feature: Library app login feature
     And user enters students password
     Then user should see the dashboard
 
-  @admin
+  @admin @employee
   Scenario: Login as admin
     When user enters admin username
     And user enters admin password
