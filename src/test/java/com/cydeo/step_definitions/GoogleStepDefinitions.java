@@ -7,6 +7,15 @@ import org.junit.Assert;
 
 public class GoogleStepDefinitions {
 
+    @When("user types apple and clicks enter")
+    public void user_types_apple_and_clicks_enter() {
+
+    }
+    @Then("user sees apple in the google title")
+    public void user_sees_apple_in_the_google_title() {
+
+    }
+
     @When("user is on Google search page")
     public void user_is_on_google_search_page() {
 
@@ -22,4 +31,6 @@ public class GoogleStepDefinitions {
 
         Driver.closeDriver();
     }
+
+
 }

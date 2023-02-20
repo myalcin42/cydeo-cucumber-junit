@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/cydeo/step_definitions",
         dryRun = false, //kodu çalıştırmadan ihtiyacımız olan step definiton yani snippets'leri elde etmiş oluruz false dersek kodu çalıştırır ve sonunda snippets'leri belirler true dersek browser açarak kodu çalıştırır
-        tags = "@Regression"  //tags ifadesi feature dosyasının başına yazdığımız annotation değeri ile aynı olduğunda sadece bu feature dosyası çalıştırılır eğer buraya "librarian" yazarsam(stepdefiniton classında bir senaryonun başına bu tag name koydum) sadece o senaryo çalıştırılır
+        tags = "@wip"  //tags ifadesi feature dosyasının başına yazdığımız annotation değeri ile aynı olduğunda sadece bu feature dosyası çalıştırılır eğer buraya "librarian" yazarsam(stepdefiniton classında bir senaryonun başına bu tag name koydum) sadece o senaryo çalıştırılır
 )
 public class CukesRunner {
 }

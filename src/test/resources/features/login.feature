@@ -12,7 +12,7 @@ Feature: Library app login feature
   #içerisine yazdığımız bu ifadeyi yani Given user is on the library login page ifadesini
   #sileceğiz background sadece aynı feature içerisinde bulunan senaryolar için geçerlidir
 
-  @librarian @employee @wip #work in progress bu annotation senin
+  @librarian @employee #@wip "work in progress" bu annotation senin
     #ya da başka birisinin bu senaryo üzerinde çalıştığını gösterir
     #wip_munir de yazabilirsin mesela
   Scenario: Login as librarian
