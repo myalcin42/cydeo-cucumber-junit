@@ -60,4 +60,8 @@ public class BrowserUtils {
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(), 10);
         wait.until(ExpectedConditions.invisibilityOf(webElement));
     }
+
+    public static void verifyTitleContains(String expectedInTitle){
+
+    }
 }
