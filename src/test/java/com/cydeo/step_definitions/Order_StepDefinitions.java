@@ -9,8 +9,11 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
+import java.util.List;
 import java.util.function.BiFunction;
 
 public class Order_StepDefinitions {
@@ -41,35 +44,46 @@ public class Order_StepDefinitions {
 //    }
 
     @And("user enters quantity {int}")
-    public void userEntersQuantity(int arg0) {
+    public void userEntersQuantity(int quantity) {
         //accepting int argument and sending it using sendKeys() method since sendKeys() method only accepts String, we need to either concat with "" or send String.valueOf(int);
-        orderPage.inputQuantity.sendKeys(arg0 + "");
-      //ya da  orderPage.inputQuantity.sendKeys(String.valueOf(arg0));
+        //clear() method will delete whatever is in the input box
+        orderPage.inputQuantity.clear(); //clear() bazen çalışmayabilir kutucuktaki yazan değeri silip yerine kendi değerimizi yazmak için backspace tuşu da kullanılabilir
+     //yani bu ifade   orderPage.inputQuantity.sendKeys(Keys.BACK_SPACE);
+        orderPage.inputQuantity.sendKeys(quantity + "");
+      //ya da  orderPage.inputQuantity.sendKeys(String.valueOf(quantity));
     }
 
     @When("user enters customer name {string}")
     public void user_enters_customer_name(String string) {
 
+        orderPage.inputName.sendKeys(string);
     }
     @When("user enters street {string}")
     public void user_enters_street(String string) {
-
+        orderPage.inputStreet.sendKeys(string);
     }
     @When("user enters city {string}")
     public void user_enters_city(String string) {
-
+        orderPage.inputCity.sendKeys(string);
     }
     @When("user enters state {string}")
     public void user_enters_state(String string) {
-
+        orderPage.inputState.sendKeys(string);
     }
     @When("user enters zipcode {string}")
     public void user_enters_zipcode(String string) {
-
+        orderPage.inputZip.sendKeys(string);
     }
     @When("user selects credit card type {string}")
-    public void user_selects_credit_card_type(String string) {
+    public void user_selects_credit_card_type(String expectedCardType) {
 
+        List<WebElement> cardTypes = orderPage.cardType;
+
+        for (WebElement each : cardTypes) {
+            if(each.getAttribute("value").equalsIgnoreCase(expectedCardType)){
+                each.click();
+            }
+        }
     }
     @When("user enters credit card number {string}")
     public void user_enters_credit_card_number(String string) {
