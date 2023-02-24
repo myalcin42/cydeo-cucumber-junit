@@ -75,6 +75,7 @@ public class BrowserUtils {
      * @return
      */
 
+
     public static List<String> dropdownOptionsAsString(WebElement dropdownElement){
         Select select = new Select(dropdownElement);
 
@@ -90,6 +91,12 @@ public class BrowserUtils {
         return actualOptionsAsString;
     }
 
+    /**
+     * This method will accept a group radio buttons as a list of WebElement
+     * It will loop through the list, click to the radio button with provided attributeValue
+     * @param radioButtons
+     * @param attributeValue
+     */
     public static void clickRadioButton(List<WebElement> radioButtons, String attributeValue){
 
         for (WebElement each : radioButtons) {
